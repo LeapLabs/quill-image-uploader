@@ -1,9 +1,10 @@
 {
   "name": "@looop/quill-image-uploader",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "repository": "https://github.com/LeapLabs/quill-image-uploader",
   "description": "A module for Quill rich text editor to allow images to be uploaded to a server instead of being base64 encoded",
-  "main": "src/quill.imageUploader.js",
+  "main": "dist/quill.imageUploader.min.js",
+  "source": "src/quill.imageUploader.js",
   "eslintConfig": {
     "extends": "airbnb",
     "env": {
