@@ -1,10 +1,12 @@
 {
   "name": "@looop/quill-image-uploader",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "repository": "https://github.com/LeapLabs/quill-image-uploader",
   "description": "A module for Quill rich text editor to allow images to be uploaded to a server instead of being base64 encoded",
   "main": "dist/quill.imageUploader.min.js",
   "source": "src/quill.imageUploader.js",
+  "module": "dist/quill.imageUploader.mjs",
+  "unpkg": "dist/quill.imageUploader.umd.js",
   "eslintConfig": {
     "extends": "airbnb",
     "env": {
@@ -14,7 +16,7 @@
   "scripts": {
     "watch": "webpack --watch --progress --mode production",
     "start": "webpack-dev-server --hot --open",
-    "build": "webpack --mode production",
+    "build": "microbundle",
     "publish": "npm publish"
   },
   "keywords": [
@@ -40,13 +42,14 @@
     "eslint-plugin-react": "^7.5.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "jshint": "^2.9.5",
+    "microbundle": "^0.11.0",
     "style-loader": "^0.19.1",
     "uglifyjs-webpack-plugin": "^1.1.6",
     "webpack": "^4.1.0",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14"
   },
-  "dependencies": {
+  "peerDependencies": {
     "quill": "^1.3.7"
   }
 }
