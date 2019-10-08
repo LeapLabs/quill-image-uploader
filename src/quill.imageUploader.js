@@ -1,7 +1,3 @@
-import "./blots/image";
-
-import "./quill.imageUploader.css";
-
 class ImageUploader {
   constructor(quill, options) {
     this.quill = quill;
@@ -40,15 +36,6 @@ class ImageUploader {
 
     const fileReader = new FileReader();
 
-    fileReader.addEventListener(
-      "load",
-      () => {
-        let base64ImageSrc = fileReader.result;
-        this.insertBase64Image(base64ImageSrc);
-      },
-      false
-    );
-
     if (file) {
       fileReader.readAsDataURL(file);
     }
@@ -70,8 +57,6 @@ class ImageUploader {
 
   insertToEditor(url) {
     const range = this.range;
-    // Delete the placeholder image
-    this.quill.deleteText(range.index, 2);
     // Insert the server saved image
     this.quill.insertEmbed(range.index, "image", `${url}`);
 
