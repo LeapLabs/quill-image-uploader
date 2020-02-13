@@ -10,7 +10,7 @@
 }
 
 .image-uploading::before {
-  content: "";
+  content: '';
   box-sizing: border-box;
   position: absolute;
   top: 50%;

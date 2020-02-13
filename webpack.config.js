@@ -1,22 +1,22 @@
-const path = require("path");
-const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const path = require('path')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = [
   {
     entry: {
-      "quill.imageUploader": "./src/quill.imageUploader.js",
-      demo: "./src/demo.js"
+      'quill.imageUploader': './src/quill.imageUploader.js',
+      demo: './src/demo.js'
     },
     output: {
-      filename: "[name].min.js",
-      path: path.resolve(__dirname, "dist")
+      filename: '[name].min.js',
+      path: path.resolve(__dirname, 'dist')
     },
     // devServer: {
     //   contentBase: './src',
     // },
     externals: {
-      quill: "Quill"
+      quill: 'Quill'
     },
     module: {
       rules: [
@@ -25,7 +25,7 @@ module.exports = [
           use: ExtractTextPlugin.extract({
             use: [
               {
-                loader: "css-loader",
+                loader: 'css-loader',
                 options: {
                   minimize: true
                 }
@@ -37,7 +37,7 @@ module.exports = [
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
-            loader: "babel-loader"
+            loader: 'babel-loader'
           }
         }
       ]
@@ -46,7 +46,7 @@ module.exports = [
       new UglifyJSPlugin({
         extractComments: true
       }),
-      new ExtractTextPlugin("quill.imageUploader.min.css")
+      new ExtractTextPlugin('quill.imageUploader.min.css')
     ]
   }
-];
+]

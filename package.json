@@ -1,18 +1,12 @@
 {
   "name": "@looop/quill-image-uploader",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "repository": "https://github.com/LeapLabs/quill-image-uploader",
   "description": "A module for Quill rich text editor to allow images to be uploaded to a server instead of being base64 encoded",
   "main": "dist/quill.imageUploader.js",
   "source": "src/quill.imageUploader.js",
   "module": "dist/quill.imageUploader.mjs",
   "unpkg": "dist/quill.imageUploader.umd.js",
-  "eslintConfig": {
-    "extends": "airbnb",
-    "env": {
-      "browser": true
-    }
-  },
   "scripts": {
     "watch": "webpack --watch --progress --mode production",
     "start": "webpack-dev-server --hot --open",
@@ -23,33 +17,35 @@
     "quill",
     "quilljs",
     "image",
-    "upload"
+    "upload",
+    "wysiwyg"
   ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.3",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
     "babel-plugin-transform-object-assign": "^6.22.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
-    "babel-preset-env": "^1.6.1",
-    "css-loader": "^0.28.8",
-    "eslint": "^4.15.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.5.1",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^3.4.2",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "jshint": "^2.9.5",
+    "husky": "^4.2.3",
     "microbundle": "^0.11.0",
-    "style-loader": "^0.19.1",
-    "uglifyjs-webpack-plugin": "^1.1.6",
-    "webpack": "^4.1.0",
-    "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14"
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "style-loader": "^1.1.3",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
     "quill": "^1.3.7"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }

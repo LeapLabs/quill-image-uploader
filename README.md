@@ -15,26 +15,26 @@ npm install quill-image-uploader --save
 ### Webpack/ES6
 
 ```javascript
-import Quill from "quill";
-import ImageUploader from "quill.imageUploader.js";
+import Quill from 'quill'
+import ImageUploader from 'quill.imageUploader.js'
 
-Quill.register("modules/imageUploader", ImageUploader);
+Quill.register('modules/imageUploader', ImageUploader)
 
 const quill = new Quill(editor, {
   // ...
   modules: {
     // ...
     imageUploader: {
-      upload: file => {
+      upload: (file) => {
         return new Promise((resolve, reject) => {
           setTimeout(() => {
             resolve(
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/480px-JavaScript-logo.png"
-            );
-          }, 3500);
-        });
+              'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/480px-JavaScript-logo.png'
+            )
+          }, 3500)
+        })
       }
     }
   }
-});
+})
 ```
